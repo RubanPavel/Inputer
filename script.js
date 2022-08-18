@@ -15,16 +15,18 @@ function clearButtonP() {
 
 let changeShowButton = document.getElementById("showButton");
 let changePassword = document.getElementById("password");
+let changHideButton = document.querySelector("body");
 
-changeShowButton.addEventListener("click", changeButton);
-changePassword.addEventListener("click", changeButton);
+changeShowButton.addEventListener("mousedown", onShowText);
 
-function changeButton() {
-  if (changeShowButton.innerHTML === "Show") {
-    changeShowButton.innerHTML = "Hide";
-    changePassword.type = "text";
-  } else {
-    changeShowButton.innerHTML = "Show";
-    changePassword.type = "password";
-  }
+function onShowText() {
+  changeShowButton.innerHTML = "Hide";
+  changePassword.type = "text";
+  changHideButton.addEventListener("mouseup", onHideText);
+}
+
+function onHideText() {
+  changeShowButton.innerHTML = "Show";
+  changePassword.type = "password";
+  changHideButton.removeEventListener("mouseup", onHideText);
 }
