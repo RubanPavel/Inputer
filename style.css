@@ -1,0 +1,14 @@
+body {
+  background-color: azure;
+}
+
+.wrapper {
+  margin: 0 auto;
+  text-align: center;
+  width: 400px;
+  height: 250px;
+  border: 2px black solid;
+  background-color: bisque;
+  padding-top: 50px;
+  border-radius: 20px;
+}
